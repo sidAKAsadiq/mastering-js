@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: white;"  >
+
+</body>
+<script>
+const ele = document.createElement('h1')
+ele.innerHTML = "Hello world"
+ele.style.color = 'white'
+console.log(ele);
+
+ele.setAttribute("id" ,  "4303")
+
+//another way
+const text = document.createTextNode("Helllo worlld")
+ele.appendChild(text)
+
+document.body.appendChild(ele)
+
+
+
+</script>
+</html>

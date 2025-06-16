@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff
+        }
+    </style>
+</head>
+<body class="bg-black">
+        <li class="language">
+            <ul>eng</ul>
+            <ul>urdu</ul>
+            <ul>spanish</ul>
+        </li>
+    </div>
+</body>
+<script>
+
+const add_lang_opti = (language)=>{
+    const ul = document.createElement('ul')
+    ul.appendChild(document.createTextNode(language))
+    document.querySelector('.language').appendChild(ul)
+}
+
+add_lang_opti("persian")
+add_lang_opti("french")
+add_lang_opti("arabic")
+
+
+//editing
+const third = document.querySelector('ul:nth-child(4)')
+//one way
+//third.innerHTML = "farsi"
+
+//another
+const neww = document.createElement('ul')
+neww.appendChild(document.createTextNode("farsi"))
+third.replaceWith(neww)
+
+
+//delete
+const del = document.querySelector('ul:nth-child(3)')
+del.remove()    
+
+
+
+</script>
+</html> 
