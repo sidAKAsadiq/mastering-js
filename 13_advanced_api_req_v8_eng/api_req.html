@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+</body>
+<script>
+    const url = 'https://api.github.com/users/sidAKAsadiq'
+    const xhr_obj = new XMLHttpRequest()
+    xhr_obj.open('GET' , url)
+    xhr_obj.send()
+    xhr_obj.onreadystatechange = function(){
+        console.log(xhr_obj.readyState);
+        const data = JSON.parse(this.responseText)
+        if(xhr_obj.readyState === 4){
+            console.log("Data : ",typeof data   );
+            console.log(data.login);
+        }
+    }
+
+
+</script>
+</html>
