@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id = "stop_timeout" >Stop timeout</button>
+    <button id = "stop_interval" >Stop interval</button>
+</body>
+<script>
+   
+   const print_hello = setTimeout(() => {
+        console.log("Hello world");
+    }, 2000);
+
+    //on clicking button
+    document.querySelector('#stop_timeout').addEventListener('click' , (e)=>{
+        console.log('Clearing timeout');
+        clearTimeout(print_hello); //stops print hello
+    })
+
+
+   const print_sadiq = setInterval(() => {
+        console.log("Hello Sadiq");
+    }, 2000);
+
+    //on clicking button
+    document.querySelector('#stop_interval').addEventListener('click' , (e)=>{
+        console.log('Clearing Interval');
+        clearTimeout(print_sadiq); //stops print hello
+    })    
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Doodh pati</h1>
+    <button id = "start" >Start</button>
+    <button id = "stop" >Stop</button>
+</body>
+<script>
+    const generate_random_color = function(){
+        const hex_codes = '123456789ABCDEF'
+        let color = '#'
+        //color is of format # + 6 characters from valid hex code
+        for(let i = 0 ; i<6; i++){
+            let random_index = (Math.random() * 14).toFixed(0)
+            console.log(random_index);
+            
+            color += hex_codes[random_index]
+        }    
+
+        console.log("Color : ", color);
+        
+        return color
+
+    }
+
+   const change_colors = ()=>{
+        document.querySelector('body').style.backgroundColor = generate_random_color()
+   }
+
+   let printer;
+
+   document.querySelector('#start').addEventListener('click' , (e)=>{
+        console.log("Starting");
+        if(!printer) //better cleaner appraoch
+        printer = setInterval(change_colors , 1000)
+   })
+
+   document.querySelector('#stop').addEventListener('click' , (e)=>{
+        console.log("Stopping");
+        clearInterval(printer)
+        printer = null ; //better cleaner approach
+   })
+
+
+
+</script>
+</html>
